@@ -23,11 +23,9 @@ shareImageAlt: "Practice the change: an infra architect's journey with AI"
 
 <Chapter id="c1" eyebrow="Honestly" title="The part I usually leave out">
 
-Most stories like this one skip the uncomfortable bit, so I'll start with it.
+The fear hit hardest in an early session on agents. I had a feeling I last had in 2013, when my on-premises skills suddenly looked old. Only this time it was moving faster. "I did this once," I remember thinking. "Can I do it again?"
 
 <p className="lead">I was afraid of becoming irrelevant. I doubted myself. I still struggle a bit with imposter syndrome, even after everything you're about to read.</p>
-
-The fear hit hardest in an early session on agents. I had a feeling I last had in 2013, when my on-premises skills suddenly looked old. Only this time it was moving faster. I remember thinking, "I did this once. Can I do it again?"
 
 If you work in infrastructure and any of that sounds familiar, keep reading. I'm not telling this story because I have it all figured out. I'm telling it for you, not about me, because I've been here before. So have you.
 
@@ -84,7 +82,7 @@ The first useful result came from an e-shop project I worked on alone. GitHub Co
 
 <Split label="Rough split of the implementation output on the e-shop project" aiLabel="Copilot ~60%" meLabel="Me ~40%" ai={60} me={40}>My rough estimate of the implementation output. I did not measure it. [How to read my numbers](#numbers)</Split>
 
-That was when AI started to feel less like a threat to my work and more like a way to extend it.
+It was a small moment. I had done very little infrastructure as code before, and now I had working code that I could read, check and stand behind. That was when AI started to feel less like a threat to my work and more like a way to extend it.
 
 <ForYou label="For you">Start with one task you repeat, not your whole job.</ForYou>
 
@@ -127,7 +125,7 @@ AI did not make my infrastructure experience less important. It gave me room to 
 
 I built it alone over a matter of weeks. My estimate is that it would typically have taken two architects about two months. I built the Factory to help infrastructure architects see how AI can broaden the work they can take on.
 
-<Diagram src="images/diagram-02-end-to-end-overview.svg" width="1920" height="1080" linkLabel="Open full size" caption="The Partner Modernization Factory lab end to end, from a simulated datacenter to the modernised app on App Service. A non-production lab." alt="Architecture of the Partner Modernization Factory lab. A simulated on-premises datacenter runs the legacy Contoso University app on IIS and SQL Server 2022. A shared hub provides Azure Firewall, private DNS and Log Analytics. The modernised app runs on App Service with SQL Managed Instance, Container Registry, Blob Storage, Service Bus and Key Vault. Stages run from deploying the datacenter to cut-over and go-live." />
+<Diagram src="images/diagram-02-end-to-end-overview.svg" width="1920" height="1080" linkLabel="Open full size" caption="The Partner Modernization Factory lab, end to end. The right-hand side, the modernised app on App Service with SQL Managed Instance, is the kind of work AI let me take on. A non-production lab." alt="Architecture of the Partner Modernization Factory lab. A simulated on-premises datacenter runs the legacy Contoso University app on IIS and SQL Server 2022. A shared hub provides Azure Firewall, private DNS and Log Analytics. The modernised app runs on App Service with SQL Managed Instance, Container Registry, Blob Storage, Service Bus and Key Vault. Stages run from deploying the datacenter to cut-over and go-live." />
 
 <ForYou label="For you">When an approach causes friction, change the approach, not the goal.</ForYou>
 
@@ -136,6 +134,8 @@ I built it alone over a matter of weeks. My estimate is that it would typically 
 <Chapter id="c7" eyebrow="Late 2025 to 2026 · Build" title="Turning it into APEX">
 
 As the results became repeatable, I stopped treating them as personal shortcuts and started building them into a workflow. [APEX](https://apexops.pro/) is that workflow. It is a multi-agent process that turns Azure platform engineering requirements into Bicep or Terraform, with human approval gates along the way.
+
+<Diagram src="images/apex-demo-proof.svg" width="1200" height="630" linkLabel="Open full size" caption="Summary of a live 30-minute APEX demo, built around a Maltese catering outlet scenario. A demo, not a customer engagement." alt="APEX demo summary for Il-Pastizzeria ta' Mario, a demo scenario, from requirements and architecture through governance, IaC, deployment and as-built documentation. Estimated cost about 155 dollars a month, 21 policies discovered, 4 adversarial reviews, and 12 resources deployed in 5 minutes using 10 Azure Verified Modules." />
 
 <Gates title="AI prepares, humans decide" label="Gate" caption="APEX has human approval gates for requirements, architecture, plan and deployment.">
 
@@ -148,7 +148,7 @@ As the results became repeatable, I stopped treating them as personal shortcuts 
 
 It grew from a GitHub Copilot resource for IT pros that I built with input from colleagues, and it became APEX in 2026.
 
-<Diagram src="images/apex-demo-proof.svg" width="1200" height="630" linkLabel="Open full size" caption="Summary of a live 30-minute APEX demo, built around a Maltese catering outlet scenario. A demo, not a customer engagement." alt="APEX demo summary for Il-Pastizzeria ta' Mario, a demo scenario, from requirements and architecture through governance, IaC, deployment and as-built documentation. Estimated cost about 155 dollars a month, 21 policies discovered, 4 adversarial reviews, and 12 resources deployed in 5 minutes using 10 Azure Verified Modules." />
+The speed has a cost. Much of my time now goes into reading, checking and correcting what AI produces. It's a different kind of work, not less work.
 
 <p className="joke"><span className="label">Dad joke</span>I asked AI to make my architecture highly available. It said it would be right back.</p>
 
@@ -244,9 +244,17 @@ I know that boundary because I've hit it. The build passed and the tests were gr
 There is no try, as Yoda said, but there is a low-risk first step.
 
 <FirstSteps stepLabel="Step">
-<FirstStep title="Ask better questions">Use AI to help prepare the questions that uncover business requirements. As cloud solution architects, we need to know which problem or problems we are solving, why they need to be solved, and how we will measure success before we move on to technical architecture.</FirstStep>
-<FirstStep title="Pick one repeated task">Let AI draft it, then check it against something you trust, such as an existing diagram or Azure Advisor.</FirstStep>
-<FirstStep title="Know your edge">Write down where your expertise ends and who you will ask beyond it.</FirstStep>
+<FirstStep title="Ask better questions">
+Use AI to help prepare the questions that uncover business requirements. As cloud solution architects, we need to know which problem or problems we are solving, why they need to be solved, and how we will measure success before we move on to technical architecture.
+
+**Try this prompt:**
+
+```
+You're helping me prepare a discovery workshop for a customer moving a workload to Azure. Draft 15 questions that uncover the business problem, why it needs solving now, how success will be measured, and any compliance, budget or timeline limits. Group them by theme.
+```
+</FirstStep>
+<FirstStep title="Pick one repeated task"><p>Let AI draft it, then check it against something you trust, such as an existing diagram or Azure Advisor.</p></FirstStep>
+<FirstStep title="Know your edge"><p>Write down where your expertise ends and who you will ask beyond it.</p></FirstStep>
 </FirstSteps>
 
 <Practice title="The whole practice on one screen" caption="AI widens the work I take on. It does not make me an expert in every specialty.">
@@ -271,9 +279,13 @@ There is no try, as Yoda said, but there is a low-risk first step.
 
 </div>
 
+So, can I do it again? Yes. Some days the fear is still there, but most days it has turned into curiosity. "Can I keep up?" became "What can I try next?"
+
 <p className="closing">In 2013, I had to practice the change I asked of partners. I still do. <strong>Your turn.</strong></p>
 
 If you try one of these this week, tell me how it went. [Find me on LinkedIn](https://www.linkedin.com/in/jonathanvella/).
+
+*Keep calm. Practice the change.*
 
 </Chapter>
 

@@ -187,6 +187,8 @@ h3 { font-family: var(--serif); font-size: 1.2rem; line-height: 1.25; margin: 0 
 .first-steps li { counter-increment: fs; background: var(--surface); border-radius: 16px; padding: 1.3rem; border: 1px solid var(--line); border-block-start: 5px solid var(--amber); box-shadow: var(--shadow); }
 .first-steps li::before { content: var(--step-label) " " counter(fs); display: block; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--amber-ink); margin-block-end: .4rem; }
 .first-steps p { margin: 0; font-size: .98rem; color: var(--ink-2); line-height: 1.55; }
+.first-steps pre { overflow-x: auto; margin: .6rem 0 0; padding: .8rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); white-space: pre-wrap; }
+.first-steps code { font-size: .88rem; }
 .practice { margin: .6rem 0 1.6rem; padding: clamp(1.2rem, 3vw, 1.8rem); border-radius: 20px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .practice-title { margin: 0 0 1rem; font-family: var(--serif); font-size: 1.5rem; font-weight: 700; }
 .practice-stages { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: .8rem; }

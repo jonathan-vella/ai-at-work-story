@@ -54,6 +54,32 @@ The listed public materials have been reviewed. Jonathan approved including thes
 - Time spent checking, correcting and maintaining AI-assisted outputs.
 - The distinction between his own work, collaborators' work and AI assistance.
 
+## New sentences for approval
+
+The following wording is proposed for the story and page. None of these statements is approved for publication yet.
+
+| ID | Proposed statement | Status |
+| --- | --- | --- |
+| N01 | "I did this once," I remember thinking. | Pending Jonathan's approval |
+| N02 | "Can I do it again?" | Pending Jonathan's approval |
+| N03 | It was a small moment. | Pending Jonathan's approval |
+| N04 | I had done very little infrastructure as code before, and now I had working code that I could read, check and stand behind. | Pending Jonathan's approval |
+| N05 | The Partner Modernization Factory lab, end to end. | Pending Jonathan's approval |
+| N06 | The right-hand side, the modernised app on App Service with SQL Managed Instance, is the kind of work AI let me take on. | Pending Jonathan's approval |
+| N07 | A non-production lab. | Pending Jonathan's approval |
+| N08 | The speed has a cost. | Pending Jonathan's approval |
+| N09 | Much of my time now goes into reading, checking and correcting what AI produces. | Pending Jonathan's approval |
+| N10 | It's a different kind of work, not less work. | Pending Jonathan's approval |
+| N11 | You're helping me prepare a discovery workshop for a customer moving a workload to Azure. | Pending Jonathan's approval |
+| N12 | Draft 15 questions that uncover the business problem, why it needs solving now, how success will be measured, and any compliance, budget or timeline limits. | Pending Jonathan's approval |
+| N13 | Group them by theme. | Pending Jonathan's approval |
+| N14 | So, can I do it again? | Pending Jonathan's approval |
+| N15 | Yes. | Pending Jonathan's approval |
+| N16 | Some days the fear is still there, but most days it has turned into curiosity. | Pending Jonathan's approval |
+| N17 | "Can I keep up?" became "What can I try next?" | Pending Jonathan's approval |
+| N18 | Keep calm. | Pending Jonathan's approval |
+| N19 | Practice the change. | Pending Jonathan's approval |
+
 ## Rules for new evidence
 
 Keep unapproved findings and source details out of this repository, including draft commits, issues and pull requests.
