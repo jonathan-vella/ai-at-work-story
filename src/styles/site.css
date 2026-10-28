@@ -1,0 +1,250 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #14213d;
+  background: #f7f9fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #14213d;
+  --muted: #3a4556;
+  --paper: #f7f9fc;
+  --surface: #ffffff;
+  --teal: #0b6e75;
+  --line: #d7dfeb;
+  --content-width: 70ch;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--teal);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.site-header,
+.site-footer {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-name {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.site-note,
+.disclaimer,
+.site-footer {
+  color: var(--muted);
+}
+
+.site-note {
+  font-size: 0.875rem;
+}
+
+main {
+  width: min(100% - 2rem, var(--content-width));
+  margin-inline: auto;
+}
+
+.hero {
+  padding-block: clamp(2.5rem, 8vw, 5rem) 2.5rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  letter-spacing: -0.035em;
+}
+
+.subtitle {
+  margin: 0.75rem 0 0;
+  color: var(--teal);
+  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
+  font-weight: 650;
+}
+
+.disclaimer {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+}
+
+.story-section {
+  padding-block: 1.5rem 2.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.prose h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.55rem, 4vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote {
+  margin-block: 0 1.1rem;
+}
+
+.prose p:last-child,
+.prose ul:last-child,
+.prose ol:last-child,
+.prose blockquote:last-child {
+  margin-bottom: 0;
+}
+
+.prose ul {
+  padding-left: 1.35rem;
+}
+
+.prose ol {
+  padding-left: 1.5rem;
+}
+
+.prose p.for-you {
+  margin-top: 1.5rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  background: #e6f1f2;
+  color: var(--ink);
+}
+
+.prose p.for-you strong {
+  color: var(--teal);
+}
+
+.prose li + li {
+  margin-top: 0.35rem;
+}
+
+.prose blockquote {
+  margin-inline: 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 1px solid var(--teal);
+  color: var(--muted);
+  font-size: 1.2rem;
+  font-weight: 650;
+}
+
+.visual {
+  width: min(100%, 26.25rem);
+  margin: 2rem auto 0;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 0.5rem 1.5rem rgb(20 33 61 / 6%);
+}
+
+.visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.visual figcaption {
+  padding: 0.85rem 0.35rem 0.15rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.visual--tools {
+  width: min(100%, 26.25rem);
+  margin: 1.5rem auto 0;
+}
+
+.visual--tools img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding-block: 1.5rem 2.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.875rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 30rem) {
+  .visual,
+  .visual--tools {
+    width: calc(100% + 2rem);
+    margin-inline: -1rem;
+    padding: 0.5rem 0 0.35rem;
+    border-inline: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .visual img {
+    border-radius: 0;
+  }
+
+  .visual figcaption {
+    padding: 0.75rem 1rem 0.35rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .story-section {
+    padding-block: 2rem 3.5rem;
+  }
+
+  .visual {
+    margin-top: 2.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a {
+    transition: color 140ms ease, text-decoration-thickness 140ms ease;
+  }
+}

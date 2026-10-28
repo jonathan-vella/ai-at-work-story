@@ -58,11 +58,13 @@ Ask Jonathan to approve the exact proposed text, quotes, images, links and claim
 
 Do not infer that a technical artifact proves adoption, successful delivery, time savings or customer impact.
 
-## 6. Prepare the public version
+## 6. Build and review the public site
 
-After the narrative and claims are approved, choose the final format with Jonathan.
+The approved story uses a custom editorial Astro layout with static output for GitHub Pages. Keep `story.md` as the narrative source and the approved SVGs under `public/images/`.
 
-Before any release, ask for approval of the complete version and destination. Staging approved material in this repository is not permission to publish it elsewhere.
+Build locally with `npm run build`, then review the rendered page at desktop and mobile widths. Keep evidence notes and private research out of the site.
+
+Before any release, obtain approval for the complete rendered site and destination. Staging approved material in this repository is not permission to publish it elsewhere.
 
 ## Completion criteria
 

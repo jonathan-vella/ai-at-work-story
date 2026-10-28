@@ -1,0 +1,4 @@
+/.private-research/
+/node_modules/
+/dist/
+/.astro/
