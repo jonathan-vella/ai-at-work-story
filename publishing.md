@@ -52,4 +52,6 @@ Distinguish AI assistance from Jonathan's judgement and collaborators' contribut
 
 Obtain approval for the complete final version and its destination before publication elsewhere.
 
+On 28 October 2026, Jonathan approved the complete redesigned story, "Practice the change", and its publication on GitHub Pages at https://jonathan-vella.github.io/ai-at-work-story/. The approved claims are recorded in [evidence.md](evidence.md). Any later addition still follows the process above.
+
 This is Jonathan's personal account. Do not present it as official Microsoft guidance, policy or endorsement.

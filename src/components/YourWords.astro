@@ -1,0 +1,7 @@
+---
+const { marker } = Astro.props;
+---
+<aside class="your-words" aria-label={marker}>
+  <p class="label">{marker}</p>
+  <p><slot /></p>
+</aside>

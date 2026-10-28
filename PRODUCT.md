@@ -12,7 +12,7 @@ The primary readers are infrastructure architects and engineers considering how 
 
 ## Product Purpose
 
-The site presents Jonathan Vella's first-person account of how AI has helped him extend his work as a Microsoft Azure infrastructure architect. Success means readers understand both the opportunities described and the human judgment, verification, and specialist input that remain necessary.
+The site presents Jonathan Vella's first-person account of how AI has helped him extend his work as a Microsoft Azure infrastructure architect. Success means an infrastructure architect finishes the page willing to try one thing this week and believing their experience still matters, while understanding the human judgment, verification, and specialist input that remain necessary.
 
 ## Positioning
 
@@ -20,7 +20,7 @@ The story uses specific personal examples and states their evidence limits. It i
 
 ## Operating Context
 
-The site is a static Astro website configured for GitHub Pages. `story.md` is the canonical narrative, `evidence.md` records claim status and limitations, and the reviewed SVGs in `public/images/` support the story.
+The site is a static Astro website configured for GitHub Pages. `story.mdx` is the canonical narrative, `evidence.md` records claim status and limitations, and the story's visuals are Astro components that take their words from `story.mdx`.
 
 ## Capabilities and Constraints
 
@@ -35,9 +35,9 @@ Use the first-person personal voice of the story. Preserve its distinction betwe
 
 ## Evidence on Hand
 
-- `story.md`: approved narrative.
+- `story.mdx`: the approved narrative.
 - `evidence.md`: approved claims, public references, limitations, and evidence gaps.
-- `public/images/`: reviewed story diagrams.
+- `public/images/`: the photos, the Factory lab and APEX demo diagrams, and the share card.
 - `captions.md`: their captions and accessible descriptions.
 
 Do not invent testimonials, benchmarks, customer outcomes, or proof beyond the approved story and evidence.

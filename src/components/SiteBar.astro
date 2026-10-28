@@ -1,0 +1,7 @@
+---
+const { brand, note, href } = Astro.props;
+---
+<header class="site-bar">
+  <a class="brand" href={href}>{brand}</a>
+  <span>{note}</span>
+</header>

@@ -1,0 +1,4 @@
+---
+const { role, title, kind } = Astro.props;
+---
+<li class={kind ? `role-${kind}` : undefined}><span class="role">{role}</span><h3>{title}</h3><p><slot /></p></li>

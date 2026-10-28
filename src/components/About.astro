@@ -1,0 +1,12 @@
+---
+import Avatar from "./Avatar.astro";
+
+const { heading, initials, photo, photoAlt } = Astro.props;
+---
+<section class="about" aria-labelledby="about">
+  <Avatar initials={initials} alt={photoAlt} photo={photo} large />
+  <div>
+    <h2 id="about">{heading}</h2>
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,21 @@
+---
+import Avatar from "./Avatar.astro";
+
+const { kicker, title, subtitle, name, role, initials, photo, photoAlt, photoNote, disclaimer } = Astro.props;
+---
+<header class="hero" aria-labelledby="title">
+  <div class="hero-inner">
+    <p class="kicker">{kicker}</p>
+    <h1 id="title">{title}</h1>
+    <p class="subtitle">{subtitle}</p>
+    <div class="dek"><slot /></div>
+    <div class="byline">
+      <Avatar initials={initials} alt={photoAlt} photo={photo} />
+      <p>
+        <strong>{name}</strong><br />{role}
+        {!photo && <><br /><span class="placeholder-note">{photoNote}</span></>}
+      </p>
+    </div>
+    <p class="disclaimer">{disclaimer}</p>
+  </div>
+</header>

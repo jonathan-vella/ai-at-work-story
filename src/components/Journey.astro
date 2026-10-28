@@ -1,0 +1,8 @@
+---
+const { label } = Astro.props;
+---
+<section class="hero journey-section">
+  <ol class="journey" aria-label={label}>
+    <slot />
+  </ol>
+</section>

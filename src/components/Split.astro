@@ -1,0 +1,7 @@
+---
+const { label, aiLabel, meLabel, ai, me } = Astro.props;
+---
+<figure class="split" aria-label={label}>
+  <div class="split-bar"><span class="ai" style={`flex:${ai}`}>{aiLabel}</span><span class="me" style={`flex:${me}`}>{meLabel}</span></div>
+  <figcaption><slot /></figcaption>
+</figure>

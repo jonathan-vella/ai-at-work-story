@@ -1,0 +1,4 @@
+---
+const { title, check } = Astro.props;
+---
+<li><h3>{title}</h3><p><slot /></p>{check && <p class="check">{check}</p>}</li>

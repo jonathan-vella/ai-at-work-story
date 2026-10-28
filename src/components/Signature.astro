@@ -1,0 +1,7 @@
+---
+const { caption } = Astro.props;
+---
+<figure class="signature wide">
+  <blockquote><p><slot /></p></blockquote>
+  <figcaption>{caption}</figcaption>
+</figure>

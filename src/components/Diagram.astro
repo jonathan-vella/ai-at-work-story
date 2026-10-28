@@ -1,0 +1,10 @@
+---
+const { src, alt, caption, width, height, linkLabel } = Astro.props;
+const href = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${src.replace(/^\//, "")}`;
+---
+<figure class="diagram wide">
+  <a class="diagram-frame" href={href}>
+    <img src={href} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+  </a>
+  <figcaption>{caption} <a href={href}>{linkLabel}</a></figcaption>
+</figure>

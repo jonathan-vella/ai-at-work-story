@@ -1,0 +1,4 @@
+---
+const { number, title } = Astro.props;
+---
+<li><span class="n" aria-hidden="true">{number}</span><h3>{title}</h3><p><slot /></p></li>

@@ -1,0 +1,13 @@
+---
+const { initials, alt, photo, large = false } = Astro.props;
+const src = photo ? `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${photo.replace(/^\//, "")}` : undefined;
+---
+{
+  src ? (
+    <img class:list={["avatar", "avatar-photo", { large }]} src={src} alt={alt} width="120" height="120" />
+  ) : (
+    <div class:list={["avatar", { large }]} role="img" aria-label={alt}>
+      <span aria-hidden="true">{initials}</span>
+    </div>
+  )
+}

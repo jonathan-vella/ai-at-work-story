@@ -1,30 +1,30 @@
 # Practice the change: an infra architect's journey with AI
 
-Jonathan Vella's personal account of how AI is changing his work as a Microsoft Azure infrastructure architect.
+Jonathan Vella's personal account of how AI changed his work as a Microsoft Azure infrastructure architect, and how other infrastructure architects can start with one repeated task.
 
-The audience is architects and technical peers, alongside a broader professional audience interested in an honest account of changing how they work.
+Read it at <https://jonathan-vella.github.io/ai-at-work-story/>.
 
-This is a personal account, not official Microsoft role guidance or a statement on Microsoft's behalf.
+This is a personal account, not official Microsoft guidance or a statement on Microsoft's behalf.
 
-## What this project is trying to explain
-
-How AI helps me complete architecture work faster, take on work I could not previously fit in, and expand what I can contribute with colleagues, partners and customers.
-
-The first part has a concrete personal example. The claims about new capabilities and value to others still need specific examples and evidence.
-
-## Start here
+## What is in this repository
 
 | File | Purpose |
 | --- | --- |
-| [Plan](plan.md) | Research, interviews, drafting and review stages |
-| [Story](story.md) | The approved first-person narrative |
-| [Evidence](evidence.md) | Claim status, approved references and evidence gaps |
-| [Interview](interview.md) | Questions to develop the story in Jonathan's own words |
-| [Publication rules](publishing.md) | Approval boundaries for this public repository |
+| [story.mdx](story.mdx) | The story. Every reader-facing word lives here. |
+| [evidence.md](evidence.md) | Approved claims, their limitations and public references |
+| [captions.md](captions.md) | Captions and alt text for the images |
+| [publishing.md](publishing.md) | Approval rules for this public repository |
+| [PRODUCT.md](PRODUCT.md) | Who the page is for and what it should do |
+| `src/` | Astro page, components and styles |
+| `public/images/` | Photos, diagrams and the share card |
 
-## Current state
+## How the site works
 
-The approved story is presented as a static Astro site for GitHub Pages. The narrative remains in `story.md`; approved SVGs are in `public/images/`.
+It is a static [Astro](https://astro.build) site with MDX, deployed to GitHub Pages by GitHub Actions on every push to `main`.
+
+`story.mdx` holds the text. The components in `src/components/` only receive that text as props or children, so changing a word means editing `story.mdx`. The page shell, share tags and components are supplied by `src/pages/index.astro`.
+
+Mark unfinished text with a `[Your words]` or `[Draft line]` marker. The production build fails while any marker remains, so a draft cannot be deployed by accident.
 
 ## Local development
 
@@ -35,6 +35,10 @@ npm ci
 npm run dev
 ```
 
-Create the production site in `dist/` with `npm run build`. GitHub Actions deploys the `main` branch to GitHub Pages.
+To preview on a phone on the same network, run `npm run dev -- --host` and open `http://<your-computer-address>:4321/ai-at-work-story/`.
 
-Later additions to the public story still require Jonathan's explicit publication approval.
+Create the production site in `dist/` with `npm run build`.
+
+## Publishing rules
+
+New public material needs Jonathan's approval of the exact wording, and each claim is recorded in `evidence.md` with its limitations. See [publishing.md](publishing.md). Private research stays in the git-ignored `.private-research/` folder.

@@ -1,0 +1,14 @@
+---
+const { fastFigure, fastUnit, fastCaption, separator, slowFigure, slowUnit, slowCaption, note, noteLinkText, noteHref } = Astro.props;
+---
+<div class="band full">
+  <div class="band-inner">
+    <div class="vs">
+      <p class="vs-item"><span class="vs-num">{fastFigure}</span><span class="vs-unit">{fastUnit}</span><span class="vs-cap">{fastCaption}</span></p>
+      <p class="vs-sep" aria-hidden="true">{separator}</p>
+      <p class="vs-item slow"><span class="vs-num">{slowFigure}</span><span class="vs-unit">{slowUnit}</span><span class="vs-cap">{slowCaption}</span></p>
+    </div>
+    <p class="band-quote"><slot /></p>
+    <p class="band-note">{note} <a href={noteHref}>{noteLinkText}</a></p>
+  </div>
+</div>

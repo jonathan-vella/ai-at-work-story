@@ -1,0 +1,4 @@
+---
+const { label, stepLabel } = Astro.props;
+---
+<ol class="first-steps wide" aria-label={label} style={`--step-label:${JSON.stringify(stepLabel)}`}><slot /></ol>

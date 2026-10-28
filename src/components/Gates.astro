@@ -1,0 +1,8 @@
+---
+const { title, label, caption } = Astro.props;
+---
+<figure class="gates wide" style={`--gate-label:${JSON.stringify(label)}`}>
+  <p class="gates-title">{title}</p>
+  <div class="gate-row"><slot /></div>
+  <figcaption>{caption}</figcaption>
+</figure>

@@ -1,137 +1,88 @@
 ---
-import MarkdownIt from "markdown-it";
-import storyContent from "../../story.md?raw";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { Content, frontmatter } from "../../story.mdx";
 import "../styles/site.css";
+import About from "../components/About.astro";
+import Band from "../components/Band.astro";
+import Chapter from "../components/Chapter.astro";
+import Claim from "../components/Claim.astro";
+import Diagram from "../components/Diagram.astro";
+import Draft from "../components/Draft.astro";
+import Fact from "../components/Fact.astro";
+import FirstStep from "../components/FirstStep.astro";
+import FirstSteps from "../components/FirstSteps.astro";
+import ForYou from "../components/ForYou.astro";
+import Gates from "../components/Gates.astro";
+import Hero from "../components/Hero.astro";
+import Journey from "../components/Journey.astro";
+import Main from "../components/Main.astro";
+import Phase from "../components/Phase.astro";
+import Photo from "../components/Photo.astro";
+import Practice from "../components/Practice.astro";
+import PracticeStage from "../components/PracticeStage.astro";
+import PracticeStages from "../components/PracticeStages.astro";
+import Scope from "../components/Scope.astro";
+import SiteBar from "../components/SiteBar.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import Signature from "../components/Signature.astro";
+import Split from "../components/Split.astro";
+import Stage from "../components/Stage.astro";
+import Stat from "../components/Stat.astro";
+import Stats from "../components/Stats.astro";
+import Step from "../components/Step.astro";
+import Steps from "../components/Steps.astro";
+import Versus from "../components/Versus.astro";
+import Workflow from "../components/Workflow.astro";
+import YourWords from "../components/YourWords.astro";
 
-const storySource = storyContent
-  .replace(/^# Story draft\s*\r?\n/, "")
-  .trim();
-const markdown = new MarkdownIt({ html: false, linkify: true });
-
-const visualByHeading = {
-  "It started in 2013": {
-    file: "role-evolution.svg",
-    width: 420,
-    height: 962,
-    alt: "A story that starts in 2013 with a move from on-premises to cloud-first work, then three stages: Use (May 2025), Build (late 2025 to 2026, APEX: AI prepares, humans decide) and Scale (past nine months, webinars and bootcamps, with others delivering it too). Guardrails apply throughout: verify every output and bring in specialists for decisions beyond my expertise. Infrastructure expertise stays the foundation.",
-    caption:
-      "Use AI, build a workflow, share it. Guardrails apply at every stage, and infrastructure expertise stays the foundation.",
-  },
-  "Tools I use": {
-    file: "tools-i-use.svg",
-    width: 420,
-    height: 240,
-    decorative: true,
-  },
-  "One engagement, in numbers": {
-    file: "apex-engagement-timeline.svg",
-    width: 420,
-    height: 1352,
-    alt: "An anonymized APEX engagement with separate timings: under 18 hours to completed Terraform, about six hands-on hours, and deployment on day three. Customer feedback is self-reported.",
-    caption:
-      "One anonymized customer engagement with three separate timings: under 18 hours elapsed to completed Terraform, about six hands-on hours, and a successful deployment on day three. Customer-reported experience, not a controlled benchmark.",
-  },
-  "What I still own": {
-    file: "human-ai-specialist-workflow.svg",
-    width: 420,
-    height: 1238,
-    alt: "A six-step workflow: discover business needs, develop the architecture, use AI, check outputs, consult specialists when needed, and leave production approval to qualified people.",
-    caption:
-      "AI assists, but checking, specialist input when needed, and production approval are human steps.",
-  },
+const components = {
+  About, Band, Chapter, Claim, Diagram, Draft, Fact, FirstStep, FirstSteps, ForYou, Gates, Hero, Journey, Main,
+  Phase, Photo, Practice, PracticeStage, PracticeStages, Scope, SiteBar, SiteFooter,
+  Signature, Split, Stage, Stat, Stats, Step, Steps, Versus, Workflow, YourWords,
 };
 
-const configuredBaseUrl = import.meta.env.BASE_URL;
-const baseUrl = configuredBaseUrl.endsWith("/")
-  ? configuredBaseUrl
-  : `${configuredBaseUrl}/`;
-const sections = storySource
-  .split(/(?=^##\s)/m)
-  .map((source) => source.trim())
-  .filter(Boolean)
-  .map((source) => {
-    const heading = source.match(/^##\s+(.+)$/m)?.[1] ?? "";
-    const visual = visualByHeading[heading];
+const unresolved = readFileSync(join(process.cwd(), "story.mdx"), "utf8").match(
+  /\[(?:Your words|Draft line)[^\]]*\]/g,
+);
+if (import.meta.env.PROD && unresolved) {
+  throw new Error(
+    `story.mdx still has ${unresolved.length} unresolved marker(s): ${unresolved.join(", ")}. Replace each with your final text and remove its component before building.`,
+  );
+}
 
-    return {
-      heading,
-      html: markdown
-        .render(source)
-        .replaceAll("<p><strong>For you:</strong>", '<p class="for-you"><strong>For you:</strong>'),
-      visual: visual
-        ? {
-            ...visual,
-            src: `${baseUrl}images/${visual.file}`,
-          }
-        : undefined,
-    };
-  });
-
-const pageTitle = "Practice the change";
-const pageSubtitle = "An infra architect's journey with AI";
-const pageDescription =
-  "A personal account of how AI tools helped an infrastructure architect extend his work, build repeatable workflows and share them with others.";
+const { lang, siteName, pageTitle, description, shareDescription, shareImagePath, shareImageAlt } = frontmatter;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const pageUrl = new URL(`${base}/`, Astro.site).href;
+const shareImage = new URL(`${base}/${shareImagePath}`, Astro.site).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={pageDescription} />
-    <meta name="theme-color" content="#14213d" />
-    <title>{pageTitle}: {pageSubtitle}</title>
+    <meta name="color-scheme" content="light dark" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={shareDescription} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={shareImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:image:alt" content={shareImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={shareDescription} />
+    <meta name="twitter:image" content={shareImage} />
+    <meta name="twitter:image:alt" content={shareImageAlt} />
   </head>
   <body>
-    <header class="site-header">
-      <a class="site-name" href={baseUrl}>AI at work</a>
-      <span class="site-note">A personal story</span>
-    </header>
-
-    <main>
-      <section class="hero" aria-labelledby="page-title">
-        <h1 id="page-title">{pageTitle}</h1>
-        <p class="subtitle">{pageSubtitle}</p>
-        <p class="disclaimer">Not official Microsoft guidance or endorsement.</p>
-      </section>
-
-      <article class="story">
-        {
-          sections.map((section) => (
-            <section class="story-section">
-              <div class="prose" set:html={section.html} />
-              {section.visual?.decorative ? (
-                <div class="visual visual--tools">
-                  <img
-                    src={section.visual.src}
-                    width={section.visual.width}
-                    height={section.visual.height}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              ) : section.visual ? (
-                <figure class="visual">
-                  <img
-                    src={section.visual.src}
-                    width={section.visual.width}
-                    height={section.visual.height}
-                    alt={section.visual.alt}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <figcaption>{section.visual.caption}</figcaption>
-                </figure>
-              ) : null}
-            </section>
-          ))
-        }
-      </article>
-    </main>
-
-    <footer class="site-footer">
-      <p>Personal account by Jonathan Vella.</p>
-    </footer>
+    <div class="progress" aria-hidden="true"></div>
+    <Content components={components} />
   </body>
 </html>
