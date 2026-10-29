@@ -44,6 +44,13 @@ mark.draft .marker { font-size: .8em; font-weight: 700; margin-inline-end: .25em
 .site-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding: .9rem clamp(1rem, 4vw, 2.5rem); background: var(--navy); color: var(--on-navy-2); font-size: .875rem; border-block-end: 1px solid var(--navy-2); }
 .site-bar .brand { color: var(--on-navy); font-weight: 700; text-decoration: none; }
 
+.section-nav { position: sticky; inset-block-start: 0; z-index: 9; background: var(--navy); color: var(--on-navy); border-block-end: 1px solid var(--navy-2); box-shadow: var(--shadow); }
+.section-nav-inner { max-inline-size: var(--wide); min-block-size: 3.25rem; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); display: flex; align-items: center; justify-content: center; }
+.section-nav-links { list-style: none; display: flex; justify-content: center; align-items: center; gap: clamp(.5rem, 2vw, 1.4rem); padding: 0; margin: 0; }
+.section-nav a { color: var(--on-navy-2); font-size: .84rem; line-height: 1.3; text-decoration: none; text-underline-offset: .3em; }
+.section-nav a:hover, .section-nav a[aria-current="location"] { color: var(--on-navy); text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 2px; }
+.section-nav-mobile { display: none; }
+
 /* Hero */
 .hero { background: var(--navy); color: var(--on-navy); padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1rem, 4vw, 2.5rem) 0; }
 .hero-inner { max-inline-size: var(--wide); margin-inline: auto; }
@@ -70,7 +77,7 @@ mark.draft .marker { font-size: .8em; font-weight: 700; margin-inline-end: .25em
 .journey .detail { font-size: .95rem; line-height: 1.45; color: var(--on-navy); }
 
 /* Story grid: prose column with wide and full-bleed breakouts */
-.chapter { display: grid; grid-template-columns: [full-start] minmax(1rem, 1fr) [wide-start] minmax(0, 12rem) [content-start] min(var(--measure), 100% - 2rem) [content-end] minmax(0, 12rem) [wide-end] minmax(1rem, 1fr) [full-end]; padding-block-start: clamp(3rem, 7vw, 5rem); }
+.chapter { display: grid; grid-template-columns: [full-start] minmax(1rem, 1fr) [wide-start] minmax(0, 12rem) [content-start] min(var(--measure), 100% - 2rem) [content-end] minmax(0, 12rem) [wide-end] minmax(1rem, 1fr) [full-end]; padding-block-start: clamp(3rem, 7vw, 5rem); scroll-margin-block-start: 4.5rem; }
 .chapter > * { grid-column: content; }
 .chapter > .wide { grid-column: wide; }
 .chapter > .full { grid-column: full; }
@@ -186,9 +193,10 @@ h3 { font-family: var(--serif); font-size: 1.2rem; line-height: 1.25; margin: 0 
 .first-steps { list-style: none; padding: 0; counter-reset: fs; margin: .6rem 0 1.6rem; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
 .first-steps li { counter-increment: fs; background: var(--surface); border-radius: 16px; padding: 1.3rem; border: 1px solid var(--line); border-block-start: 5px solid var(--amber); box-shadow: var(--shadow); }
 .first-steps li::before { content: var(--step-label) " " counter(fs); display: block; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--amber-ink); margin-block-end: .4rem; }
-.first-steps p { margin: 0; font-size: .98rem; color: var(--ink-2); line-height: 1.55; }
-.first-steps pre { overflow-x: auto; margin: .6rem 0 0; padding: .8rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); white-space: pre-wrap; }
-.first-steps code { font-size: .88rem; }
+.first-steps p { margin: 0 0 .6rem; font-size: .98rem; color: var(--ink-2); line-height: 1.55; }
+.first-steps p:last-child { margin-block-end: 0; }
+.first-steps pre, .first-steps pre.astro-code { overflow-x: auto; margin: .4rem 0 0; padding: .8rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg) !important; color: var(--ink) !important; white-space: pre-wrap; }
+.first-steps code, .first-steps pre.astro-code span { font-size: .88rem; color: var(--ink) !important; }
 .practice { margin: .6rem 0 1.6rem; padding: clamp(1.2rem, 3vw, 1.8rem); border-radius: 20px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .practice-title { margin: 0 0 1rem; font-family: var(--serif); font-size: 1.5rem; font-weight: 700; }
 .practice-stages { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: .8rem; }
@@ -205,6 +213,13 @@ h3 { font-family: var(--serif); font-size: 1.2rem; line-height: 1.25; margin: 0 
 .tool-chips li { padding: .45rem .95rem; border-radius: 999px; border: 1.5px solid var(--ink); font-size: .92rem; font-weight: 600; }
 .closing { font-family: var(--serif); font-size: clamp(1.55rem, 1.2rem + 1.5vw, 2.3rem); line-height: 1.3; margin: 1.6rem 0 1rem !important; }
 .closing strong { color: var(--teal-ink); }
+
+/* Skills roadmap */
+.skills-roadmap { list-style: none; padding: 0; margin: .6rem 0 1.4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: .9rem; }
+.skills-roadmap li { padding: 1.1rem; border: 1px solid var(--line); border-block-start: 4px solid var(--amber); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow); }
+.skills-roadmap h3 { margin-block-end: .6rem; }
+.skills-roadmap p { margin: 0 0 .65rem; color: var(--ink-2); font-size: .95rem; line-height: 1.5; }
+.skills-roadmap p:last-child { margin-block-end: 0; }
 
 /* Projects */
 .project-links { margin: .4rem 0 1.4rem; }
@@ -227,6 +242,17 @@ h3 { font-family: var(--serif); font-size: 1.2rem; line-height: 1.25; margin: 0 
 .site-footer { margin-top: 3rem; padding: 2rem clamp(1rem, 4vw, 2.5rem); border-block-start: 1px solid var(--line); color: var(--muted); font-size: .9rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .site-footer p { margin: 0; }
 
+@media (max-width: 48rem) {
+  .section-nav-inner { min-block-size: 3rem; justify-content: flex-start; }
+  .section-nav-links { display: none; }
+  .section-nav-mobile { display: block; position: relative; }
+  .section-nav-mobile summary { cursor: pointer; color: var(--on-navy); font-size: .9rem; font-weight: 600; }
+  .section-nav-mobile summary:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+  .section-nav-mobile ul { position: absolute; inset-block-start: calc(100% + .8rem); inset-inline-start: -.75rem; min-inline-size: 14rem; max-inline-size: calc(100vw - 2rem); list-style: none; padding: .45rem; margin: 0; border: 1px solid var(--navy-2); border-radius: 12px; background: var(--navy); box-shadow: var(--shadow); }
+  .section-nav-mobile li a { display: block; padding: .65rem .75rem; border-radius: 8px; }
+  .section-nav-mobile li a:hover, .section-nav-mobile li a[aria-current="location"] { background: var(--navy-2); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .progress { display: none; }
@@ -236,5 +262,5 @@ h3 { font-family: var(--serif); font-size: 1.2rem; line-height: 1.25; margin: 0 
   :root { --bg: #fff; --surface: #fff; --ink: #000; --ink-2: #222; --muted: #555; --line: #999; --navy: #fff; --on-navy: #000; --on-navy-2: #333; --amber: #8a5300; }
   @page { margin: .75in; }
   .progress, .no-print { display: none !important; }
-  .stats > div, .steps li, .workflow li, .first-steps li, .practice, .gates, .versus > div { box-shadow: none; break-inside: avoid; }
+  .stats > div, .steps li, .workflow li, .first-steps li, .skills-roadmap li, .practice, .gates, .versus > div { box-shadow: none; break-inside: avoid; }
 }

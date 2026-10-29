@@ -5,5 +5,4 @@ export default defineConfig({
   site: "https://jonathan-vella.github.io",
   base: "/ai-at-work-story",
   integrations: [mdx()],
-  markdown: { smartypants: false },
 });

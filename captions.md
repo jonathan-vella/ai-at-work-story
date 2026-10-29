@@ -4,7 +4,7 @@ Personal story. Not official Microsoft guidance or endorsement.
 
 ## diagram-02-end-to-end-overview.svg
 
-**Caption:** The Partner Modernization Factory lab end to end, from a simulated datacenter to the modernised app on App Service. A non-production lab.
+**Caption:** The Partner Modernization Factory lab, end to end. The right-hand side, the modernised app on App Service with SQL Managed Instance, is the kind of work AI let me take on. A non-production lab.
 
 **Alt text:** Architecture of the Partner Modernization Factory lab. A simulated on-premises datacenter runs the legacy Contoso University app on IIS and SQL Server 2022. A shared hub provides Azure Firewall, private DNS and Log Analytics. The modernised app runs on App Service with SQL Managed Instance, Container Registry, Blob Storage, Service Bus and Key Vault. Stages run from deploying the datacenter to cut-over and go-live.
 

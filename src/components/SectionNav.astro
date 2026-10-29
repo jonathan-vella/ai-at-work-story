@@ -1,0 +1,52 @@
+---
+const { label, mobileLabel, items = [] } = Astro.props;
+---
+<nav class="section-nav no-print" aria-label={label}>
+  <div class="section-nav-inner">
+    <ul class="section-nav-links">
+      {items.map(({ href, label: itemLabel }, index) => (
+        <li><a href={href} aria-current={index === 0 ? "location" : undefined}>{itemLabel}</a></li>
+      ))}
+    </ul>
+    <details class="section-nav-mobile">
+      <summary>{mobileLabel}</summary>
+      <ul>
+        {items.map(({ href, label: itemLabel }) => <li><a href={href}>{itemLabel}</a></li>)}
+      </ul>
+    </details>
+  </div>
+</nav>
+
+<script>
+  const nav = document.querySelector(".section-nav");
+  if (nav) {
+    const links = [...nav.querySelectorAll("a[href^='#']")];
+    const targetHashes = new Set(links.map((link) => link.getAttribute("href")));
+    const chapters = [...document.querySelectorAll("section.chapter[id]")];
+    const chapterToNavHash = new Map();
+    let activeHash = links[0]?.getAttribute("href") ?? "#c1";
+    for (const chapter of chapters) {
+      const hash = `#${chapter.id}`;
+      if (targetHashes.has(hash)) activeHash = hash;
+      chapterToNavHash.set(chapter.id, activeHash);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      const current = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((left, right) => left.boundingClientRect.top - right.boundingClientRect.top)[0];
+      if (!current) return;
+      const mappedHash = chapterToNavHash.get(current.target.id);
+      if (!mappedHash) return;
+      links.forEach((link) => {
+        if (link.getAttribute("href") === mappedHash) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+
+    chapters.forEach((chapter) => observer.observe(chapter));
+    nav.querySelector(".section-nav-mobile")?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => nav.querySelector(".section-nav-mobile")?.removeAttribute("open"));
+    });
+  }
+</script>

@@ -8,7 +8,7 @@ shareImagePath: images/practice-the-change-share-card.png
 shareImageAlt: "Practice the change: an infra architect's journey with AI"
 ---
 
-<SiteBar brand="AI at work" href="#top" note="A personal story · about 9 min read" />
+<SiteBar brand="AI at work" href="#top" note="A personal story · about 10 min read" />
 
 <Main>
 
@@ -20,6 +20,18 @@ shareImageAlt: "Practice the change: an infra architect's journey with AI"
 <Stage when="Late 2025 to 2026" stage="Build">APEX. AI prepares, humans decide.</Stage>
 <Stage when="Past nine months" stage="Scale">Webinars and bootcamps. Others deliver it too.</Stage>
 </Journey>
+
+<SectionNav
+  label="Story sections"
+  mobileLabel="On this page"
+  items={[
+    { href: "#c1", label: "My story" },
+    { href: "#c8", label: "In practice" },
+    { href: "#c10", label: "What I still own" },
+    { href: "#skills", label: "Skills roadmap" },
+    { href: "#c11", label: "Your turn" },
+  ]}
+/>
 
 <Chapter id="c1" eyebrow="Honestly" title="The part I usually leave out">
 
@@ -236,6 +248,38 @@ I know that boundary because I've hit it. The build passed and the tests were gr
 <p className="yoda">Much to learn, I still have.</p>
 
 <ForYou label="For you">Know where your expertise ends, and bring in people who start there.</ForYou>
+
+</Chapter>
+
+<Chapter id="skills" eyebrow="Skills · practical roadmap" title="Build your skills in stages">
+
+Start from the Azure knowledge you already have. This is a practical route, not a checklist; skip foundations you can already demonstrate.
+
+<SkillsRoadmap label="Practical skills roadmap">
+<SkillStage title="1. Work effectively with agents">
+Give an agent a clear task, the relevant context and your constraints. Ask it to outline its approach, then inspect each change and run checks before accepting the result.
+
+**Try:** use a small, low-risk repeatable task and note where the agent needed your judgement.
+
+**Optional milestone:** [GH-300: GitHub Copilot](https://learn.microsoft.com/credentials/certifications/resources/study-guides/gh-300).
+</SkillStage>
+<SkillStage title="2. Broaden into modernisation">
+In a non-production lab, map an application's dependencies and choose a bounded modernisation change. Use AI to assist, then test the result against stated requirements and involve a specialist when a decision exceeds your expertise.
+
+**Try:** choose one challenge from the Factory and produce an assessment and modernisation plan.
+
+**Optional milestone:** [DP-300: Azure Database Administrator](https://learn.microsoft.com/credentials/certifications/resources/study-guides/dp-300) for database-focused work.
+</SkillStage>
+<SkillStage title="3. Make the work repeatable">
+Turn a task that worked into a repeatable workflow with clear inputs, human approval points, validation and handover notes. Run it again and compare results before sharing it.
+
+**Try:** document one workflow with explicit human approval gates and run it on a second workload.
+
+**Optional milestones:** [AZ-400: DevOps Engineer](https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-400) for delivery practices, or [AZ-305: Azure Solutions Architect](https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-305) for architecture.
+</SkillStage>
+</SkillsRoadmap>
+
+The [Partner Modernization Factory learning path](https://factory.apexops.pro/guides/learning-path/) links hands-on challenges to Microsoft Learn content and relevant credentials; its role tracks offer more options. Certification can mark a learning milestone, but it does not replace hands-on evidence or specialist judgement.
 
 </Chapter>
 

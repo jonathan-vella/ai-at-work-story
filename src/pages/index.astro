@@ -23,9 +23,12 @@ import Practice from "../components/Practice.astro";
 import PracticeStage from "../components/PracticeStage.astro";
 import PracticeStages from "../components/PracticeStages.astro";
 import Scope from "../components/Scope.astro";
+import SectionNav from "../components/SectionNav.astro";
 import SiteBar from "../components/SiteBar.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import Signature from "../components/Signature.astro";
+import SkillStage from "../components/SkillStage.astro";
+import SkillsRoadmap from "../components/SkillsRoadmap.astro";
 import Split from "../components/Split.astro";
 import Stage from "../components/Stage.astro";
 import Stat from "../components/Stat.astro";
@@ -39,7 +42,7 @@ import YourWords from "../components/YourWords.astro";
 const components = {
   About, Band, Chapter, Claim, Diagram, Draft, Fact, FirstStep, FirstSteps, ForYou, Gates, Hero, Journey, Main,
   Phase, Photo, Practice, PracticeStage, PracticeStages, Scope, SiteBar, SiteFooter,
-  Signature, Split, Stage, Stat, Stats, Step, Steps, Versus, Workflow, YourWords,
+  SectionNav, Signature, SkillStage, SkillsRoadmap, Split, Stage, Stat, Stats, Step, Steps, Versus, Workflow, YourWords,
 };
 
 const unresolved = readFileSync(join(process.cwd(), "story.mdx"), "utf8").match(
