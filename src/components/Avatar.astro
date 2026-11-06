@@ -4,7 +4,16 @@ const src = photo ? `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${photo.repl
 ---
 {
   src ? (
-    <img class:list={["avatar", "avatar-photo", { large }]} src={src} alt={alt} width="120" height="120" />
+    <img
+      class:list={["avatar", "avatar-photo", { large }]}
+      src={src}
+      alt={alt}
+      width="120"
+      height="120"
+      loading={large ? "lazy" : "eager"}
+      fetchpriority={large ? undefined : "high"}
+      decoding="async"
+    />
   ) : (
     <div class:list={["avatar", { large }]} role="img" aria-label={alt}>
       <span aria-hidden="true">{initials}</span>
