@@ -66,6 +66,8 @@ const shareImage = new URL(`${base}/${shareImagePath}`, Astro.site).href;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#14213d" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a1020" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={pageUrl} />
@@ -85,6 +87,7 @@ const shareImage = new URL(`${base}/${shareImagePath}`, Astro.site).href;
     <meta name="twitter:image:alt" content={shareImageAlt} />
   </head>
   <body>
+    <a class="skip-link" href="#c1">Skip to story</a>
     <div class="progress" aria-hidden="true"></div>
     <Content components={components} />
   </body>

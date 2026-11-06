@@ -45,8 +45,22 @@ const { label, mobileLabel, items = [] } = Astro.props;
     }, { rootMargin: "-20% 0px -70% 0px" });
 
     chapters.forEach((chapter) => observer.observe(chapter));
-    nav.querySelector(".section-nav-mobile")?.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => nav.querySelector(".section-nav-mobile")?.removeAttribute("open"));
-    });
+    const mobileMenu = nav.querySelector(".section-nav-mobile");
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => mobileMenu.removeAttribute("open"));
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && mobileMenu.hasAttribute("open")) {
+          mobileMenu.removeAttribute("open");
+          mobileMenu.querySelector("summary")?.focus();
+        }
+      });
+      document.addEventListener("click", (event) => {
+        if (mobileMenu.hasAttribute("open") && event.target instanceof Node && !mobileMenu.contains(event.target)) {
+          mobileMenu.removeAttribute("open");
+        }
+      });
+    }
   }
 </script>

@@ -125,7 +125,7 @@ It was not a straight line. We tested the documented non-functional requirements
 
 <p className="joke"><span className="label">Dad joke</span>Azure Container Instances could not contain my requirements. Sorry.</p>
 
-<Stats>
+<Stats label="AKS and PostgreSQL load and failover test results">
 <Stat figure="17,000">transactions per second for five minutes, with zero data loss</Stat>
 <Stat figure="~8 s">failover during an unexpected database-node outage</Stat>
 <Stat figure="~50 h">of work in under a week, addressing PCI and GDPR requirements</Stat>
@@ -133,11 +133,11 @@ It was not a straight line. We tested the documented non-functional requirements
 
 <p className="note-link">From my own tests. <a href="#numbers">How to read my numbers</a></p>
 
-AI did not make my infrastructure experience less important. It gave me room to stretch into application and database modernisation—work I would previously have handed off or avoided. To see how far I could push that, I built a [hands-on modernisation lab kit](https://factory.apexops.pro/) end to end with AI, apart from the Contoso University sample application. It brings together cloud foundations, application modernisation, database migration, performance testing, validation and handover.
+AI did not make my infrastructure experience less important. It gave me room to stretch into application and database modernisation, work I would previously have handed off or avoided. To see how far I could push that, I built a [hands-on modernisation lab kit](https://factory.apexops.pro/) end to end with AI, apart from the Contoso University sample application. It brings together cloud foundations, application modernisation, database migration, performance testing, validation and handover.
 
 I built it alone over a matter of weeks. My estimate is that it would typically have taken two architects about two months. Building it showed me how much broader an infrastructure architect's reach can become when curiosity replaces hesitation.
 
-<Diagram src="images/diagram-02-end-to-end-overview.svg" width="1920" height="1080" linkLabel="Open full size" caption="The modernisation lab I built end to end with AI. The right-hand side—the modernised app and database—is the kind of work AI let me take on. A non-production lab." alt="Architecture of the modernisation lab. A simulated on-premises datacenter runs the legacy Contoso University app on IIS and SQL Server 2022. A shared hub provides Azure Firewall, private DNS and Log Analytics. The modernised app runs on App Service with SQL Managed Instance, Container Registry, Blob Storage, Service Bus and Key Vault. Stages run from deploying the datacenter to cut-over and go-live." />
+<Diagram src="images/diagram-02-end-to-end-overview.svg" width="1920" height="1080" linkLabel="Open full size" caption="The modernisation lab I built end to end with AI. The right-hand side, the modernised app and database, is the kind of work AI let me take on. A non-production lab." alt="Architecture of the modernisation lab. A simulated on-premises datacenter runs the legacy Contoso University app on IIS and SQL Server 2022. A shared hub provides Azure Firewall, private DNS and Log Analytics. The modernised app runs on App Service with SQL Managed Instance, Container Registry, Blob Storage, Service Bus and Key Vault. Stages run from deploying the datacenter to cut-over and go-live." />
 
 <ForYou label="For you">When an approach causes friction, change the approach, not the goal.</ForYou>
 
@@ -176,10 +176,10 @@ These days, AI lets me complete much of the architecture, assessment and Terrafo
 <Step title="Discover and diagram" check="Matched the customer's diagram">I used my workflow to inspect the live environment and create an architecture diagram of the deployed workload.</Step>
 <Step title="Well-Architected assessment" check="Every relevant Advisor finding appeared">The agents drafted the assessment, and I compared it with Azure Advisor.</Step>
 <Step title="Terraform and requirements">We assessed the customer's Terraform and synthesised SLA, RTO, RPO and compliance requirements.</Step>
-<Step title="Updated Terraform" check="Deployed successfully on day three">Generated module-based Terraform so an improved version could be deployed in another region.</Step>
+<Step title="Updated Terraform" check="Deployed successfully on day three">We generated module-based Terraform so an improved version could be deployed in another region.</Step>
 </Steps>
 
-<Stats>
+<Stats label="Engagement timeline and effort">
 <Stat figure="<18 h">from the initial request to completed Terraform, including AI processing and waiting time</Stat>
 <Stat figure="~6 h">my hands-on time: prompts, steering, interpreting results and asking the customer questions</Stat>
 <Stat figure="Day 3">successful deployment, a separate milestone after the 18 hours</Stat>
@@ -195,7 +195,7 @@ AI helped me cover more ground. The result still depended on the context and dir
 
 Once the workflow worked for me, the next question was whether others could use it. I built the material, and I deliver it together with colleagues.
 
-<Stats>
+<Stats label="Approximate webinar and bootcamp attendance">
 <Stat figure="~600">attendees at a webinar across EMEA</Stat>
 <Stat figure="~150">attendees across customer and partner bootcamps</Stat>
 <Stat figure="~400">attendees at an internal bootcamp</Stat>
@@ -246,12 +246,12 @@ You don't adapt to AI by memorising prompts or collecting certificates. You adap
 
 <SkillsRoadmap label="How to adapt and thrive with AI">
 <SkillStage title="1. Trade fear for curiosity">
-When a new capability appears, notice the hesitation—and try it on a real, low-risk task anyway. Ask "What happens if I try this?" instead of "Will this replace me?"
+When a new capability appears, notice the hesitation, and try it on a real, low-risk task anyway. Ask "What happens if I try this?" instead of "Will this replace me?"
 
 **In practice:** pick one task you normally avoid or repeat every week, and spend an hour exploring how an agent handles it.
 </SkillStage>
 <SkillStage title="2. Discover the capabilities it unlocks">
-AI does not replace your foundation; it equips you to reach across boundaries that used to stop you—whether that is writing infrastructure code, testing database failover, or modernising an application in a lab.
+AI does not replace your foundation; it equips you to reach across boundaries that used to stop you, whether that is writing infrastructure code, testing database failover, or modernising an application in a lab.
 
 **In practice:** use your core experience as the anchor, and let AI help you step into one adjacent area you used to hand off.
 </SkillStage>
@@ -268,7 +268,7 @@ Thriving with AI means changing how you spend your energy. Less time goes into t
 
 There is no try, as Yoda said, but there is a low-risk first step.
 
-<FirstSteps stepLabel="Step">
+<FirstSteps label="Three steps to start this week" stepLabel="Step">
 <FirstStep title="Ask better questions">
 Use AI to help prepare the questions that uncover business requirements. As architects, we need to know which problem or problems we are solving, why they need to be solved, and how we will measure success before we move on to technical architecture.
 

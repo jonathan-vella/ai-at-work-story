@@ -37,7 +37,7 @@ Use the first-person personal voice of the story. Preserve its distinction betwe
 
 - `story.mdx`: the approved narrative.
 - `evidence.md`: approved claims, public references, limitations, and evidence gaps.
-- `public/images/`: the photos, the Factory lab and APEX demo diagrams, and the share card.
+- `public/images/`: the photos, the modernisation lab diagram, and the share card.
 - `captions.md`: their captions and accessible descriptions.
 
 Do not invent testimonials, benchmarks, customer outcomes, or proof beyond the approved story and evidence.
