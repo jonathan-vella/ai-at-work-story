@@ -17,7 +17,7 @@ shareImageAlt: "Practice the change: an infra architect's journey with AI"
 <Journey label="The journey at a glance">
 <Stage when="2013" stage="Change">On-premises to cloud-first. I made that change before.</Stage>
 <Stage when="May 2025" stage="Use">First useful results with AI.</Stage>
-<Stage when="Late 2025 to 2026" stage="Build">APEX. AI prepares, humans decide.</Stage>
+<Stage when="Late 2025 to 2026" stage="Build">Repeatable workflows. AI prepares, humans decide.</Stage>
 <Stage when="Past nine months" stage="Scale">Webinars and bootcamps. Others deliver it too.</Stage>
 </Journey>
 
@@ -28,7 +28,7 @@ shareImageAlt: "Practice the change: an infra architect's journey with AI"
     { href: "#c1", label: "My story" },
     { href: "#c8", label: "In practice" },
     { href: "#c10", label: "What I still own" },
-    { href: "#skills", label: "Skills roadmap" },
+    { href: "#skills", label: "Adapt to thrive" },
     { href: "#c11", label: "Your turn" },
   ]}
 />
@@ -82,15 +82,15 @@ Non-functional requirements are the reliability, security and performance a syst
 
 I work across three continents, so time and scale are major constraints in my engagements. And here's an admission. Before AI, I did not do much infrastructure-as-code work. I had limited time, and I did not feel especially strong in IaC.
 
-Now I share Azure Verified Modules-based IaC, aligned with best practices, and code snippets with my audiences. GitHub Copilot helps me scale my work and deliver faster.
+Now I write and share reusable infrastructure code and snippets with my audiences. Working with AI helped me turn a weak spot into part of my everyday work, and deliver faster.
 
 </Chapter>
 
 <Chapter id="c4" eyebrow="May 2025 · Use" title="The first change">
 
-In May 2025, I discovered that agents in GitHub could help me create architecture diagrams, Azure cost estimates and Well-Architected reviews much faster. Azure MCP became part of my work in June and July 2025. Skills followed in late 2025.
+In May 2025, I discovered that agents in GitHub could help me create architecture diagrams, cost estimates and Well-Architected reviews much faster. By mid-2025, connecting agents to live cloud context and reusable skills became part of my work.
 
-The first useful result came from an e-shop project I worked on alone. GitHub Copilot helped me create the infrastructure as code, deploy it, and produce Python-based architecture and data-flow diagrams. Before deployment, I checked that the infrastructure as code aligned with my Azure Policy constraints.
+The first useful result came from an e-shop project I worked on alone. GitHub Copilot helped me create the infrastructure as code, deploy it, and produce Python-based architecture and data-flow diagrams. Before deployment, I checked that the infrastructure as code aligned with my policy constraints.
 
 <Split label="Rough split of the implementation output on the e-shop project" aiLabel="Copilot ~60%" meLabel="Me ~40%" ai={60} me={40}>My rough estimate of the implementation output. I did not measure it. [How to read my numbers](#numbers)</Split>
 
@@ -104,7 +104,7 @@ It was a small moment. I had done very little infrastructure as code before, and
 
 In May 2025, agentic AI was still new in my work, and I saw it build one hallucination on top of another. In my experience, it is more reliable now. Those early months also taught me not to overload prompts. Too much information can get you nowhere with AI. Less can be more.
 
-Around October 2025, while I was building my [Microsoft Sovereign Cloud Brain Trek](https://jonathan-vella.github.io/microsoft-sovereign-cloud-brain-trek/), Claude in GitHub Copilot gave me a confident answer about Microsoft's digital commitments. When I challenged it, the agent produced a fake URL. So I checked the official announcement.
+Around October 2025, while I was building my [Microsoft Sovereign Cloud Brain Trek](https://jonathan-vella.github.io/microsoft-sovereign-cloud-brain-trek/), an AI agent gave me a confident answer about Microsoft's digital commitments. When I challenged it, the agent produced a fake URL. So I checked the official announcement.
 
 <Versus>
 <Claim label="What the AI told me" headline="Six digital commitments, announced in December 2024">Backed by a link that turned out to be fake.</Claim>
@@ -133,23 +133,21 @@ It was not a straight line. We tested the documented non-functional requirements
 
 <p className="note-link">From my own tests. <a href="#numbers">How to read my numbers</a></p>
 
-AI did not make my infrastructure experience less important. It gave me room to extend it into application and database modernisation. The [Partner Modernization Factory](https://factory.apexops.pro/) is my clearest example. I built its technical and learning kit end to end with AI, apart from the Contoso University sample application. The kit brings together Azure foundations, application modernisation, database migration and performance work, validation and handover, in a challenge-based learning experience for infrastructure architects.
+AI did not make my infrastructure experience less important. It gave me room to stretch into application and database modernisation—work I would previously have handed off or avoided. To see how far I could push that, I built a [hands-on modernisation lab kit](https://factory.apexops.pro/) end to end with AI, apart from the Contoso University sample application. It brings together cloud foundations, application modernisation, database migration, performance testing, validation and handover.
 
-I built it alone over a matter of weeks. My estimate is that it would typically have taken two architects about two months. I built the Factory to help infrastructure architects see how AI can broaden the work they can take on.
+I built it alone over a matter of weeks. My estimate is that it would typically have taken two architects about two months. Building it showed me how much broader an infrastructure architect's reach can become when curiosity replaces hesitation.
 
-<Diagram src="images/diagram-02-end-to-end-overview.svg" width="1920" height="1080" linkLabel="Open full size" caption="The Partner Modernization Factory lab, end to end. The right-hand side, the modernised app on App Service with SQL Managed Instance, is the kind of work AI let me take on. A non-production lab." alt="Architecture of the Partner Modernization Factory lab. A simulated on-premises datacenter runs the legacy Contoso University app on IIS and SQL Server 2022. A shared hub provides Azure Firewall, private DNS and Log Analytics. The modernised app runs on App Service with SQL Managed Instance, Container Registry, Blob Storage, Service Bus and Key Vault. Stages run from deploying the datacenter to cut-over and go-live." />
+<Diagram src="images/diagram-02-end-to-end-overview.svg" width="1920" height="1080" linkLabel="Open full size" caption="The modernisation lab I built end to end with AI. The right-hand side—the modernised app and database—is the kind of work AI let me take on. A non-production lab." alt="Architecture of the modernisation lab. A simulated on-premises datacenter runs the legacy Contoso University app on IIS and SQL Server 2022. A shared hub provides Azure Firewall, private DNS and Log Analytics. The modernised app runs on App Service with SQL Managed Instance, Container Registry, Blob Storage, Service Bus and Key Vault. Stages run from deploying the datacenter to cut-over and go-live." />
 
 <ForYou label="For you">When an approach causes friction, change the approach, not the goal.</ForYou>
 
 </Chapter>
 
-<Chapter id="c7" eyebrow="Late 2025 to 2026 · Build" title="Turning it into APEX">
+<Chapter id="c7" eyebrow="Late 2025 to 2026 · Build" title="From shortcuts to a workflow">
 
-As the results became repeatable, I stopped treating them as personal shortcuts and started building them into a workflow. [APEX](https://apexops.pro/) is that workflow. It is a multi-agent process that turns Azure platform engineering requirements into Bicep or Terraform, with human approval gates along the way.
+As the results became repeatable, I stopped treating them as personal shortcuts and started building them into [a multi-agent workflow](https://github.com/jonathan-vella/apex) that turns platform engineering requirements into Bicep or Terraform, with human approval gates along the way.
 
-<Diagram src="images/apex-demo-proof.svg" width="1200" height="630" linkLabel="Open full size" caption="Summary of a live 30-minute APEX demo, built around a Maltese catering outlet scenario. A demo, not a customer engagement." alt="APEX demo summary for Il-Pastizzeria ta' Mario, a demo scenario, from requirements and architecture through governance, IaC, deployment and as-built documentation. Estimated cost about 155 dollars a month, 21 policies discovered, 4 adversarial reviews, and 12 resources deployed in 5 minutes using 10 Azure Verified Modules." />
-
-<Gates title="AI prepares, humans decide" label="Gate" caption="APEX has human approval gates for requirements, architecture, plan and deployment.">
+<Gates title="AI prepares, humans decide" label="Gate" caption="Human approval gates for requirements, architecture, plan and deployment.">
 
 1. Requirements
 2. Architecture
@@ -158,7 +156,7 @@ As the results became repeatable, I stopped treating them as personal shortcuts 
 
 </Gates>
 
-It grew from a GitHub Copilot resource for IT pros that I built with input from colleagues, and it became APEX in 2026.
+It grew from a shared resource for IT pros that I built with input from colleagues.
 
 The speed has a cost. Much of my time now goes into reading, checking and correcting what AI produces. It's a different kind of work, not less work.
 
@@ -175,10 +173,10 @@ The speed has a cost. Much of my time now goes into reading, checking and correc
 These days, AI lets me complete much of the architecture, assessment and Terraform preparation in about a day. This engagement shows what that looks like.
 
 <Steps>
-<Step title="Discover and diagram" check="Matched the customer's diagram">I used APEX to connect to Azure and create an architecture diagram of the deployed workload.</Step>
-<Step title="Well-Architected assessment" check="Every relevant Advisor finding appeared">APEX produced the assessment. I compared it with Azure Advisor.</Step>
-<Step title="Terraform and requirements">APEX assessed the customer's Terraform and synthesised SLA, RTO, RPO and compliance requirements.</Step>
-<Step title="Updated Terraform" check="Deployed successfully on day three">Azure Verified Modules-based Terraform, so an improved version could be deployed in another region.</Step>
+<Step title="Discover and diagram" check="Matched the customer's diagram">I used my workflow to inspect the live environment and create an architecture diagram of the deployed workload.</Step>
+<Step title="Well-Architected assessment" check="Every relevant Advisor finding appeared">The agents drafted the assessment, and I compared it with Azure Advisor.</Step>
+<Step title="Terraform and requirements">We assessed the customer's Terraform and synthesised SLA, RTO, RPO and compliance requirements.</Step>
+<Step title="Updated Terraform" check="Deployed successfully on day three">Generated module-based Terraform so an improved version could be deployed in another region.</Step>
 </Steps>
 
 <Stats>
@@ -209,16 +207,7 @@ The night before that webinar, I kept rereading my slides and thinking, "Who am 
 
 <p className="pull">Other people also deliver this material without me.</p>
 
-The Partner Modernization Factory is the same idea for partners. It helps them build a repeatable modernisation practice.
-
-<nav className="project-links wide" aria-label="Projects referenced">
-
-- [APEX](https://github.com/jonathan-vella/apex)
-- [APEX vNext](https://github.com/jonathan-vella/apex-vnext)
-- [Partner Modernization Factory hackathon](https://github.com/jonathan-vella/apex-factory-hackathon)
-- [The Ultimate CSA Toolkit](https://github.com/jonathan-vella/the-ultimate-csa-toolkit)
-
-</nav>
+What started as my own way of coping with change became something others could pick up, adapt and run with on their own.
 
 <ForYou label="For you">Share it. Work only you can do does not scale.</ForYou>
 
@@ -251,35 +240,27 @@ I know that boundary because I've hit it. The build passed and the tests were gr
 
 </Chapter>
 
-<Chapter id="skills" eyebrow="Skills · practical roadmap" title="Build your skills in stages">
+<Chapter id="skills" eyebrow="Mindset · Adapt to thrive" title="Find what AI equips you to do">
 
-Start from the Azure knowledge you already have. This is a practical route, not a checklist; skip foundations you can already demonstrate.
+You don't adapt to AI by memorising prompts or collecting certificates. You adapt by staying curious, testing your edges, and changing how you work.
 
-<SkillsRoadmap label="Practical skills roadmap">
-<SkillStage title="1. Work effectively with agents">
-Give an agent a clear task, the relevant context and your constraints. Ask it to outline its approach, then inspect each change and run checks before accepting the result.
+<SkillsRoadmap label="How to adapt and thrive with AI">
+<SkillStage title="1. Trade fear for curiosity">
+When a new capability appears, notice the hesitation—and try it on a real, low-risk task anyway. Ask "What happens if I try this?" instead of "Will this replace me?"
 
-**Try:** use a small, low-risk repeatable task and note where the agent needed your judgement.
-
-**Optional milestone:** [GH-300: GitHub Copilot](https://learn.microsoft.com/credentials/certifications/resources/study-guides/gh-300).
+**In practice:** pick one task you normally avoid or repeat every week, and spend an hour exploring how an agent handles it.
 </SkillStage>
-<SkillStage title="2. Broaden into modernisation">
-In a non-production lab, map an application's dependencies and choose a bounded modernisation change. Use AI to assist, then test the result against stated requirements and involve a specialist when a decision exceeds your expertise.
+<SkillStage title="2. Discover the capabilities it unlocks">
+AI does not replace your foundation; it equips you to reach across boundaries that used to stop you—whether that is writing infrastructure code, testing database failover, or modernising an application in a lab.
 
-**Try:** choose one challenge from the Factory and produce an assessment and modernisation plan.
-
-**Optional milestone:** [DP-300: Azure Database Administrator](https://learn.microsoft.com/credentials/certifications/resources/study-guides/dp-300) for database-focused work.
+**In practice:** use your core experience as the anchor, and let AI help you step into one adjacent area you used to hand off.
 </SkillStage>
-<SkillStage title="3. Make the work repeatable">
-Turn a task that worked into a repeatable workflow with clear inputs, human approval points, validation and handover notes. Run it again and compare results before sharing it.
+<SkillStage title="3. Shift from doing everything to directing and verifying">
+Thriving with AI means changing how you spend your energy. Less time goes into typing from scratch; more goes into framing the problem, steering agents, verifying every output, and knowing when to bring in a specialist.
 
-**Try:** document one workflow with explicit human approval gates and run it on a second workload.
-
-**Optional milestones:** [AZ-400: DevOps Engineer](https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-400) for delivery practices, or [AZ-305: Azure Solutions Architect](https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-305) for architecture.
+**In practice:** turn one successful experiment into a repeatable workflow with explicit human approval gates.
 </SkillStage>
 </SkillsRoadmap>
-
-The [Partner Modernization Factory learning path](https://factory.apexops.pro/guides/learning-path/) links hands-on challenges to Microsoft Learn content and relevant credentials; its role tracks offer more options. Certification can mark a learning milestone, but it does not replace hands-on evidence or specialist judgement.
 
 </Chapter>
 
@@ -289,7 +270,7 @@ There is no try, as Yoda said, but there is a low-risk first step.
 
 <FirstSteps stepLabel="Step">
 <FirstStep title="Ask better questions">
-Use AI to help prepare the questions that uncover business requirements. As cloud solution architects, we need to know which problem or problems we are solving, why they need to be solved, and how we will measure success before we move on to technical architecture.
+Use AI to help prepare the questions that uncover business requirements. As architects, we need to know which problem or problems we are solving, why they need to be solved, and how we will measure success before we move on to technical architecture.
 
 **Try this prompt:**
 
@@ -310,18 +291,6 @@ You're helping me prepare a discovery workshop for a customer moving a workload 
 <p className="guardrails"><strong>Guardrails at every stage.</strong> Verify every output. Bring in specialists for decisions beyond my expertise.</p>
 <p className="foundation"><strong>Infrastructure expertise</strong> stays the foundation at every stage.</p>
 </Practice>
-
-<p className="tools-lead">The tools I use. Pick one. You don't need all five.</p>
-
-<div className="tool-chips">
-
-- Microsoft Scout
-- GitHub Copilot
-- Visual Studio Code
-- GitHub Copilot App
-- Microsoft Copilot
-
-</div>
 
 So, can I do it again? Yes. Some days the fear is still there, but most days it has turned into curiosity. "Can I keep up?" became "What can I try next?"
 
@@ -344,8 +313,7 @@ I have tried to be precise, so here is how to read what is on this page.
 - Time and effort figures are my own records and estimates, not controlled benchmarks or promises for every project. That includes "about a day", the 60/40 split, which I did not measure, and "two architects, about two months".
 - The AKS/PostgreSQL results come from my own tests and my review of the test reports and supporting evidence. They are not independently verified. Addressing PCI and GDPR requirements does not mean formal certification.
 - The customer engagement is anonymised, and its timings and feedback are self-reported. "About six months" is what the customer told me, not a measured comparison. It does not show that AI alone made the difference or that the result applies to every project. Matching the customer's diagram and the relevant Advisor findings does not establish broader correctness, compliance, security or production readiness.
-- The Factory repository records lab validations and iterations, not a fully rehearsed partner event or a production deployment.
-- "Aligned with best practices" is my own assessment of my IaC, not an independent review.
+- The modernisation lab repository records lab validations and iterations, not a fully rehearsed partner event or a production deployment.
 - Attendance figures are my own approximate counts. Attendance does not show adoption.
 - The jokes are jokes. They describe no real events.
 
@@ -355,7 +323,7 @@ I have tried to be precise, so here is how to read what is on this page.
 
 <About heading="About me" initials="JV" photo="images/jonathan-vella-avatar.jpg" photoAlt="Photo of Jonathan Vella">
 
-I'm a Microsoft Azure infrastructure architect. I joined Microsoft in February 2013 and work across three continents. I built APEX and the Partner Modernization Factory kit, and I share them through webinars and bootcamps with colleagues.
+I'm a Microsoft Azure infrastructure architect. I joined Microsoft in February 2013 and work across three continents. I build open-source AI workflows and hands-on modernisation labs, and share them through webinars and bootcamps with colleagues.
 
 <p><a href="https://www.linkedin.com/in/jonathanvella/">Find me on LinkedIn</a></p>
 
